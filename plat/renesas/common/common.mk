@@ -127,6 +127,7 @@ BL31_SOURCES	+=	${RCAR_GIC_SOURCES}				\
 			plat/renesas/common/bl31_plat_setup.c		\
 			plat/renesas/common/plat_pm.c			\
 			plat/renesas/common/rcar_svc.c			\
+			plat/renesas/common/rcar_svc_pfc.c			\
 			drivers/renesas/common/console/rcar_console.S	\
 			drivers/renesas/common/console/rcar_printf.c	\
 			drivers/renesas/common/delay/micro_delay.c	\

@@ -30,11 +30,23 @@ static uintptr_t rcar_bsp_handler(unsigned int smc_fid,
 	int ret = -1;
 
 	switch (smc_fid) {
-	case RCAR_BSP_SVC_LOCKED_REGSET_LINUX :
+	case RCAR_BSP_SVC_LOCKED_REGSET_PFC_LINUX :
 		ret = rcar_bsp_locked_regset_pfc(x1, x2, x3, RCAR_BSP_SVC_OS_LINUX);
 		break;
-	case RCAR_BSP_SVC_LOCKED_REGSET_RTOS1 :
+	case RCAR_BSP_SVC_LOCKED_REGSET_PFC_RTOS1 :
 		ret = rcar_bsp_locked_regset_pfc(x1, x2, x3, RCAR_BSP_SVC_OS_RTOS1);
+		break;
+	case RCAR_BSP_SVC_LOCKED_REGSET_CPG_LINUX :
+		ret = rcar_bsp_locked_regset_cpg(x1, x2, x3, RCAR_BSP_SVC_OS_LINUX);
+		break;
+	case RCAR_BSP_SVC_LOCKED_REGSET_CPG_RTOS1 :
+		ret = rcar_bsp_locked_regset_cpg(x1, x2, x3, RCAR_BSP_SVC_OS_RTOS1);
+		break;
+	case RCAR_BSP_SVC_AUDIT_REGWRITE_CPG_LINUX :
+		ret = rcar_bsp_audit_regwrite_cpg(x1, x2, RCAR_BSP_SVC_OS_LINUX);
+		break;
+	case RCAR_BSP_SVC_AUDIT_REGWRITE_CPG_RTOS1 :
+		ret = rcar_bsp_audit_regwrite_cpg(x1, x2, RCAR_BSP_SVC_OS_RTOS1);
 		break;
 	default:
 		;

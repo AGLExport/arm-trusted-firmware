@@ -7,14 +7,9 @@
 
 #include <string.h>
 
-//#include <caam.h>
 #include <common/runtime_svc.h>
-//#include <dcfg.h>
 #include <lib/mmio.h>
-#include <tools_share/uuid.h>
 
-//#include <plat_common.h>
-//#include <sipsvc.h>
 #include <rcar_svc.h>
 
 typedef struct s_pfc_audit_table {

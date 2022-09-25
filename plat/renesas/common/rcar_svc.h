@@ -19,8 +19,15 @@
 #define	RCAR_BSP_SVC_UID					U(0xff01)
 #define	RCAR_BSP_SVC_VERSION				U(0xff03)
 
-#define	RCAR_BSP_SVC_LOCKED_REGSET_LINUX	U(0x0501)
-#define	RCAR_BSP_SVC_LOCKED_REGSET_RTOS1	U(0x0502)
+#define	RCAR_BSP_SVC_LOCKED_REGSET_PFC_LINUX	(0x0501u)
+#define	RCAR_BSP_SVC_LOCKED_REGSET_PFC_RTOS1	(0x0502u)
+
+#define	RCAR_BSP_SVC_LOCKED_REGSET_CPG_LINUX	(0x0503u)
+#define	RCAR_BSP_SVC_LOCKED_REGSET_CPG_RTOS1	(0x0504u)
+
+#define	RCAR_BSP_SVC_AUDIT_REGWRITE_CPG_LINUX	(0x0505u)
+#define	RCAR_BSP_SVC_AUDIT_REGWRITE_CPG_RTOS1	(0x0506u)
+
 
 #define	RCAR_BSP_SVC_NUMS					(5)
 
@@ -43,8 +50,8 @@
  *
  */
 int rcar_bsp_locked_regset_pfc(u_register_t regaddr, u_register_t mask, u_register_t value, int os);
-
-
+int rcar_bsp_locked_regset_cpg(u_register_t regaddr, u_register_t mask, u_register_t value, int os);
+int rcar_bsp_audit_regwrite_cpg(u_register_t regaddr, u_register_t value, int os);
 
 
 #endif	//#ifndef RCAR_BSP_SVC_H
